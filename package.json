@@ -1,15 +1,18 @@
 {
-  "name": "fe22-html-mp2-eleonora-nocentini-skoldebrink",
-  "version": "1.0.0",
-  "description": "Miniproject 2",
-  "main": "index.js",
+  "name": "highstdeliandmarketimitation",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "build": "npx tailwindcss -i ./src/css/styles.css -o ./src/dist/output.css && rm -rf ./docs && mkdir -p ./docs && cp -R ./src/. ./docs/"
+    "dev": "astro dev",
+    "build": "astro build && node ./scripts/postbuild.mjs",
+    "preview": "astro preview",
+    "check": "astro check"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "tailwindcss": "^3.4.4"
+    "@astrojs/check": "^0.9.9",
+    "@types/node": "^25.9.1",
+    "astro": "^6.4.2",
+    "typescript": "^6.0.3"
   }
 }

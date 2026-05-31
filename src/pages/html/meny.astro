@@ -1,0 +1,67 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
+import { menuItems } from "../../data/menu";
+import { withBase } from "../../lib/paths";
+---
+
+<BaseLayout
+  title="Meny"
+  description="Se High St Delis meny med deli-klassiker, gröna alternativ och tydliga prispunkter."
+>
+  <section class="sub-hero">
+    <div>
+      <p class="eyebrow">Meny</p>
+      <h1>Vår meny är byggd för både cravings och långa samtal.</h1>
+      <p class="section-intro">
+        Deli-klassiker, varma smaker och några lättare alternativ som fortfarande känns generösa.
+      </p>
+    </div>
+    <img src={withBase("images/highStreetDeli933.jpg")} alt="Deli-mat serverad på bricka" />
+  </section>
+
+  <section>
+    <SectionHeading
+      eyebrow="Utvalda rätter"
+      title="Sandwiches, bowls och favoriter från disken"
+      intro="Priserna är presenterade på ett tydligare sätt och innehållet ligger nu i en egen datafil i projektet."
+    />
+
+    <div class="menu-grid">
+      {
+        menuItems.map((item) => (
+          <article class="menu-card">
+            <div class="menu-card-top">
+              <span class="menu-label">{item.label}</span>
+              <strong class="menu-price">{item.price}</strong>
+            </div>
+            <h2>{item.name}</h2>
+            <p>{item.description}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="split-section split-section-reversed">
+    <div class="copy-stack">
+      <SectionHeading
+        eyebrow="Bra att veta"
+        title="Menyinnehållet är nu lättare att uppdatera"
+        intro="I stället för att ändra samma markup överallt ligger rätterna samlade i projektets datafiler."
+      />
+      <p>
+        Det betyder mindre dubbelarbete nästa gång du vill lägga till priser, nya kategorier eller
+        fler sidor i samma uttryck.
+      </p>
+      <p>
+        GitHub Pages räcker fortfarande fint eftersom allt renderas som vanlig statisk HTML vid
+        bygget.
+      </p>
+    </div>
+
+    <div class="image-stack image-stack-single">
+      <img src={withBase("images/cheeseBurger.jpeg")} alt="Närbild på menybild från restaurangen" />
+    </div>
+  </section>
+</BaseLayout>

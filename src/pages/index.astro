@@ -1,0 +1,97 @@
+---
+import SectionHeading from "../components/SectionHeading.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { highlights, serviceMoments } from "../data/site";
+import { withBase } from "../lib/paths";
+---
+
+<BaseLayout
+  title="High St Deli"
+  description="En varm, modern och statisk restaurangsajt för High St Deli med meny, stämning och bokningshjälp."
+>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Street food x kvarterskrog</p>
+      <h1>Globala smaker, lokal puls och kvällar som dröjer sig kvar.</h1>
+      <p class="section-intro">
+        High St Deli blandar deli-känsla, barhäng och stimmig kvällsenergi i en modern version av
+        den ursprungliga skoluppgiften.
+      </p>
+      <div class="button-row">
+        <a class="button" href={withBase("html/meny.html")}>Se meny</a>
+        <a class="button button-secondary" href={withBase("html/bokabord.html")}>Boka bord</a>
+      </div>
+    </div>
+
+    <figure class="hero-media">
+      <img
+        src={withBase("images/highStreetMarjetAndDeli.jpg")}
+        alt="Interiörbild från High St Deli"
+      />
+      <figcaption>För luncher, spontana AW-kvällar och långa deli-middagar.</figcaption>
+    </figure>
+  </section>
+
+  <section class="card-grid">
+    {
+      highlights.map((item) => (
+        <article class="feature-card">
+          <p class="eyebrow">Höjdpunkt</p>
+          <h2>{item.title}</h2>
+          <p>{item.body}</p>
+        </article>
+      ))
+    }
+  </section>
+
+  <section class="split-section">
+    <div class="image-stack">
+      <img src={withBase("images/highStHero.jpeg")} alt="Sandwich och dryck på träbord" />
+      <img src={withBase("images/cheeseBurger.jpeg")} alt="Närbild på en serverad burgare" />
+    </div>
+
+    <div class="copy-stack">
+      <SectionHeading
+        eyebrow="Om konceptet"
+        title="En enklare stack, ett starkare uttryck"
+        intro="Sajten är ombyggd som en statisk Astro-lösning med delade komponenter i stället för duplicerade HTML-filer."
+      />
+      <p>
+        Målet här är inte bara en ny tekniketikett, utan ett projekt som är lättare att läsa,
+        vidareutveckla och publicera gratis. Därför är layout, navigation och innehåll uppdelat i
+        tydliga delar och GitHub Pages får bara färdiga statiska filer.
+      </p>
+      <p>
+        Resultatet blir en sajt som ser mer medveten ut på både mobil och desktop, samtidigt som
+        driftkostnaden hålls nere.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <SectionHeading
+      eyebrow="Upplevelsen"
+      title="Tre stämningar, en och samma plats"
+      intro="Sajten är tänkt att sälja in känslan lika mycket som maten."
+    />
+
+    <div class="service-grid">
+      {
+        serviceMoments.map((item) => (
+          <article class="service-card">
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="gallery-banner">
+    <div>
+      <p class="eyebrow">Redo för nästa steg</p>
+      <h2>Gratis hosting, renare repo och en modernare grund att bygga vidare på.</h2>
+    </div>
+    <a class="button" href={withBase("html/bokabord.html")}>Öppna bokningssidan</a>
+  </section>
+</BaseLayout>

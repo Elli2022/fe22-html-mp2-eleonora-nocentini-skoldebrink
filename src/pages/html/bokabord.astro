@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BookingForm from "../../components/BookingForm.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
+import { contactDetails, openingHours } from "../../data/site";
+import { withBase } from "../../lib/paths";
+---
+
+<BaseLayout
+  title="Boka bord"
+  description="Planera en bokningsförfrågan hos High St Deli med tydliga kontaktvägar och ett mobilvänligt flöde."
+>
+  <section class="sub-hero">
+    <div>
+      <p class="eyebrow">Boka bord</p>
+      <h1>Gör det enkelt att samla gänget, utan att låsa projektet till en dyr hostinglösning.</h1>
+      <p class="section-intro">
+        Här är bokningsdelen omgjord för att vara ärlig, tydlig och användbar även på en helt
+        statisk sajt.
+      </p>
+    </div>
+    <img src={withBase("images/highStHero.jpeg")} alt="Mörk restaurangmiljö med mat och dryck" />
+  </section>
+
+  <section class="booking-layout">
+    <aside class="booking-sidebar">
+      <SectionHeading
+        eyebrow="Kontakt"
+        title="Snabbast väg till ett bord"
+        intro="För en riktig driftad sajt hade nästa steg kunnat vara formulärkoppling eller bokningssystem, men här håller vi lösningen gratis."
+      />
+
+      <div class="contact-card">
+        <p><strong>Telefon</strong><br />{contactDetails.phone}</p>
+        <p><strong>Adress</strong><br />{contactDetails.address}</p>
+      </div>
+
+      <div class="contact-card">
+        <p class="eyebrow">Öppettider</p>
+        <ul class="footer-list">
+          {openingHours.map((slot) => <li>{slot}</li>)}
+        </ul>
+      </div>
+    </aside>
+
+    <BookingForm />
+  </section>
+</BaseLayout>

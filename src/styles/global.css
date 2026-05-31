@@ -1,0 +1,586 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --bg: #f5efe6;
+  --surface: rgba(255, 249, 240, 0.84);
+  --surface-strong: #fffaf4;
+  --ink: #1d1a17;
+  --muted: #5e5549;
+  --line: rgba(44, 34, 24, 0.1);
+  --olive: #31493b;
+  --olive-deep: #24372c;
+  --gold: #daac53;
+  --rust: #a8573d;
+  --shadow: 0 24px 60px rgba(36, 27, 18, 0.12);
+  --radius-xl: 32px;
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --content-width: 1180px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top left, rgba(218, 172, 83, 0.24), transparent 28%),
+    radial-gradient(circle at top right, rgba(168, 87, 61, 0.15), transparent 24%),
+    linear-gradient(180deg, #f7f1e8 0%, var(--bg) 52%, #f0e7db 100%);
+  color: var(--ink);
+  font-family: "Manrope", sans-serif;
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: var(--olive-deep);
+  color: white;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.page-glow {
+  position: fixed;
+  inset: auto;
+  width: 22rem;
+  height: 22rem;
+  border-radius: 999px;
+  filter: blur(42px);
+  opacity: 0.32;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-glow-left {
+  top: -6rem;
+  left: -5rem;
+  background: rgba(218, 172, 83, 0.52);
+}
+
+.page-glow-right {
+  top: 18rem;
+  right: -7rem;
+  background: rgba(49, 73, 59, 0.22);
+}
+
+.site-shell {
+  position: relative;
+  z-index: 1;
+  width: min(calc(100% - 2rem), var(--content-width));
+  margin: 0 auto;
+  padding: 1.25rem 0 2.5rem;
+}
+
+.page-content {
+  display: grid;
+  gap: 2rem;
+}
+
+.site-header,
+.site-footer,
+.hero,
+.sub-hero,
+.feature-card,
+.service-card,
+.menu-card,
+.gallery-banner,
+.contact-card,
+.booking-panel,
+.booking-sidebar {
+  backdrop-filter: blur(16px);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.site-header,
+.site-footer,
+.hero,
+.sub-hero,
+.gallery-banner,
+.booking-layout,
+.split-section {
+  border-radius: var(--radius-xl);
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 1.4rem;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.14);
+}
+
+.brand-kicker,
+.eyebrow {
+  margin: 0;
+  color: var(--rust);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.brand-name {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.8rem;
+  padding: 0.65rem 1rem;
+  border: 1px solid rgba(49, 73, 59, 0.14);
+  border-radius: 999px;
+  color: var(--olive-deep);
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 160ms ease, background 160ms ease, color 160ms ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible,
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-1px);
+}
+
+.nav-link-solid,
+.button {
+  background: linear-gradient(135deg, var(--olive) 0%, var(--olive-deep) 100%);
+  color: white;
+}
+
+.nav-link-active {
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--gold) 0%, #b7773f 100%);
+  color: #1d1610;
+}
+
+.hero,
+.sub-hero,
+.split-section,
+.booking-layout {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.hero {
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: stretch;
+}
+
+.sub-hero {
+  grid-template-columns: 1fr 0.95fr;
+  align-items: center;
+}
+
+.hero h1,
+.sub-hero h1,
+.section-heading h2,
+.gallery-banner h2,
+.booking-copy h2 {
+  margin: 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(2.6rem, 6vw, 5.6rem);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+}
+
+.section-heading h2,
+.gallery-banner h2,
+.booking-copy h2 {
+  font-size: clamp(2.1rem, 4.5vw, 3.5rem);
+}
+
+.section-intro,
+.hero-copy p,
+.copy-stack p,
+.service-card p,
+.feature-card p,
+.menu-card p,
+.booking-copy p,
+.contact-card p,
+.site-footer p,
+.site-footer li {
+  color: var(--muted);
+}
+
+.hero-copy,
+.copy-stack {
+  display: grid;
+  align-content: center;
+  gap: 1rem;
+}
+
+.button-row,
+.booking-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.8rem 1.15rem;
+  border: 0;
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.button-secondary {
+  background: rgba(255, 250, 244, 0.94);
+  color: var(--olive-deep);
+  border: 1px solid rgba(49, 73, 59, 0.14);
+}
+
+.hero-media,
+.sub-hero img,
+.image-stack img {
+  overflow: hidden;
+  border-radius: calc(var(--radius-xl) - 0.5rem);
+}
+
+.hero-media {
+  position: relative;
+  min-height: 22rem;
+}
+
+.hero-media img,
+.sub-hero img,
+.image-stack img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-media figcaption {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  margin: 0;
+  padding: 0.9rem 1rem;
+  border-radius: 1rem;
+  background: rgba(27, 21, 16, 0.62);
+  color: white;
+  font-size: 0.95rem;
+}
+
+.card-grid,
+.service-grid,
+.menu-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.card-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.service-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.menu-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.feature-card,
+.service-card,
+.menu-card,
+.contact-card {
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+}
+
+.feature-card h2,
+.service-card h3,
+.menu-card h2 {
+  margin: 0;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.03em;
+}
+
+.feature-card h2,
+.menu-card h2 {
+  font-size: 2rem;
+}
+
+.service-card h3 {
+  font-size: 1.8rem;
+}
+
+.split-section {
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.split-section-reversed {
+  grid-template-columns: 1fr 0.95fr;
+}
+
+.image-stack {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.image-stack-single {
+  height: 100%;
+}
+
+.image-stack-single img {
+  min-height: 100%;
+}
+
+.gallery-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.menu-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.menu-label {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(218, 172, 83, 0.18);
+  color: var(--rust);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.menu-price {
+  color: var(--olive);
+  font-size: 1.05rem;
+}
+
+.booking-layout {
+  grid-template-columns: 0.86fr 1.14fr;
+}
+
+.booking-sidebar {
+  border-radius: var(--radius-xl);
+  padding: 1.4rem;
+}
+
+.booking-panel {
+  border-radius: var(--radius-xl);
+  padding: 1.4rem;
+}
+
+.booking-panel,
+.booking-form,
+.booking-copy {
+  display: grid;
+  gap: 1rem;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.booking-form label {
+  display: grid;
+  gap: 0.4rem;
+  font-weight: 700;
+}
+
+.booking-form input,
+.booking-form textarea,
+.booking-output {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(49, 73, 59, 0.15);
+  border-radius: var(--radius-md);
+  background: rgba(255, 252, 246, 0.92);
+  color: var(--ink);
+  font: inherit;
+}
+
+.booking-form textarea {
+  resize: vertical;
+}
+
+.booking-output {
+  padding: 1rem;
+}
+
+.booking-output-label {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rust);
+}
+
+.booking-output pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: "Manrope", sans-serif;
+}
+
+.site-footer {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: var(--radius-xl);
+}
+
+.footer-list {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+@media (max-width: 920px) {
+  .site-header,
+  .gallery-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero,
+  .sub-hero,
+  .split-section,
+  .booking-layout,
+  .card-grid,
+  .service-grid,
+  .menu-grid,
+  .site-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-media {
+    min-height: 18rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .site-shell {
+    width: min(calc(100% - 1rem), var(--content-width));
+    padding-top: 0.5rem;
+  }
+
+  .site-header,
+  .hero,
+  .sub-hero,
+  .split-section,
+  .gallery-banner,
+  .booking-panel,
+  .booking-sidebar,
+  .site-footer {
+    padding: 1rem;
+  }
+
+  .field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .brand {
+    align-items: flex-start;
+  }
+
+  .brand-mark {
+    width: 3.75rem;
+    height: 3.75rem;
+  }
+
+  .brand-name {
+    font-size: 1.8rem;
+  }
+
+  .nav-list,
+  .button-row,
+  .booking-actions {
+    width: 100%;
+  }
+
+  .nav-list li,
+  .nav-link,
+  .button,
+  .button-secondary {
+    width: 100%;
+  }
+}

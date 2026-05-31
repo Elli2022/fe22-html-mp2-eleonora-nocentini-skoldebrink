@@ -1,0 +1,115 @@
+---
+import { contactDetails } from "../data/site";
+---
+
+<section class="booking-panel">
+  <div class="booking-copy">
+    <p class="eyebrow">Bokningshjälp</p>
+    <h2>Planera din förfrågan utan backendkostnad</h2>
+    <p>
+      Den här versionen är gjord för GitHub Pages, så formuläret skickar inget automatiskt. I
+      stället hjälper det gästen att skriva en tydlig bokningsförfrågan som kan kopieras och
+      skickas vidare.
+    </p>
+    <p>
+      För riktiga bokningar kan du också ringa direkt på
+      <a href={`tel:${contactDetails.phone.replace(/\s+/g, "")}`}>{contactDetails.phone}</a>.
+    </p>
+  </div>
+
+  <form class="booking-form" data-booking-form>
+    <div class="field-grid">
+      <label>
+        Namn
+        <input name="name" type="text" required />
+      </label>
+
+      <label>
+        E-post
+        <input name="email" type="email" required />
+      </label>
+
+      <label>
+        Telefon
+        <input name="phone" type="tel" required />
+      </label>
+
+      <label>
+        Antal gäster
+        <input name="guests" type="number" min="1" max="12" required />
+      </label>
+
+      <label>
+        Datum
+        <input name="date" type="date" required />
+      </label>
+
+      <label>
+        Tid
+        <input name="time" type="time" required />
+      </label>
+    </div>
+
+    <label>
+      Önskemål
+      <textarea name="notes" rows="4" placeholder="Allergier, barnstol, fönsterplats eller något annat du vill nämna."></textarea>
+    </label>
+
+    <div class="booking-actions">
+      <button class="button" type="submit">Skapa bokningsunderlag</button>
+      <button class="button button-secondary" type="button" data-copy-button disabled>
+        Kopiera text
+      </button>
+    </div>
+
+    <div class="booking-output" aria-live="polite">
+      <p class="booking-output-label">Förslag på bokningstext</p>
+      <pre data-booking-preview>Fyll i formuläret så skapas ett bokningsunderlag här.</pre>
+    </div>
+  </form>
+</section>
+
+<script>
+  const form = document.querySelector("[data-booking-form]");
+  const preview = document.querySelector("[data-booking-preview]");
+  const copyButton = document.querySelector("[data-copy-button]");
+
+  if (form instanceof HTMLFormElement && preview instanceof HTMLElement && copyButton instanceof HTMLButtonElement) {
+    let latestMessage = "";
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const formData = new FormData(form);
+
+      const message = [
+        "Hej High St Deli!",
+        "",
+        "Jag vill gärna göra en bokningsförfrågan:",
+        `Namn: ${formData.get("name") ?? ""}`,
+        `E-post: ${formData.get("email") ?? ""}`,
+        `Telefon: ${formData.get("phone") ?? ""}`,
+        `Antal gäster: ${formData.get("guests") ?? ""}`,
+        `Datum: ${formData.get("date") ?? ""}`,
+        `Tid: ${formData.get("time") ?? ""}`,
+        `Önskemål: ${formData.get("notes") ?? "Inga särskilda önskemål"}`,
+      ].join("\n");
+
+      latestMessage = message;
+      preview.textContent = message;
+      copyButton.disabled = false;
+    });
+
+    copyButton.addEventListener("click", async () => {
+      if (!latestMessage) {
+        return;
+      }
+
+      await navigator.clipboard.writeText(latestMessage);
+      copyButton.textContent = "Kopierat";
+
+      window.setTimeout(() => {
+        copyButton.textContent = "Kopiera text";
+      }, 1600);
+    });
+  }
+</script>

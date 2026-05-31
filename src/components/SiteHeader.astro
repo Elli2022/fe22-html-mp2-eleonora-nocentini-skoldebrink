@@ -1,0 +1,61 @@
+---
+import { withBase } from "../lib/paths";
+
+type Props = {
+  currentPath: string;
+};
+
+const { currentPath } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const links = [
+  { label: "Startsidan", path: "", tone: "ghost" },
+  { label: "Meny", path: "html/meny.html", tone: "ghost" },
+  { label: "Boka bord", path: "html/bokabord.html", tone: "solid" },
+];
+
+const isActive = (path: string) => {
+  if (!path) {
+    return currentPath === base;
+  }
+
+  return currentPath.endsWith(path);
+};
+---
+
+<header class="site-header">
+  <a class="brand" href={withBase()}>
+    <img
+      class="brand-mark"
+      src={withBase("images/highStMarketDeliLogo.png")}
+      alt="High St Deli logotyp"
+      width="72"
+      height="72"
+    />
+    <div>
+      <p class="brand-kicker">Malmö deli and neighborhood bar</p>
+      <strong class="brand-name">High St Deli</strong>
+    </div>
+  </a>
+
+  <nav aria-label="Huvudmeny">
+    <ul class="nav-list">
+      {
+        links.map((link) => (
+          <li>
+            <a
+              class:list={[
+                "nav-link",
+                link.tone === "solid" && "nav-link-solid",
+                isActive(link.path) && "nav-link-active",
+              ]}
+              href={withBase(link.path)}
+              aria-current={isActive(link.path) ? "page" : undefined}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>

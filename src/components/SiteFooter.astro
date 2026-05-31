@@ -1,0 +1,29 @@
+---
+import { contactDetails, openingHours } from "../data/site";
+---
+
+<footer class="site-footer">
+  <div>
+    <p class="eyebrow">Besök oss</p>
+    <h2>High St Deli</h2>
+    <p>{contactDetails.address}</p>
+    <p>
+      <a href={`tel:${contactDetails.phone.replace(/\s+/g, "")}`}>{contactDetails.phone}</a>
+    </p>
+  </div>
+
+  <div>
+    <p class="eyebrow">Öppettider</p>
+    <ul class="footer-list">
+      {openingHours.map((slot) => <li>{slot}</li>)}
+    </ul>
+  </div>
+
+  <div>
+    <p class="eyebrow">Koncept</p>
+    <p>
+      En moderniserad skolversion av en restaurangsajt, ombyggd som en statisk Astro-sajt för att
+      vara lätt att underhålla och billig att hosta.
+    </p>
+  </div>
+</footer>

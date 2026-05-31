@@ -1,59 +1,38 @@
 # HighStDeliAndMarketImitation
 
-## Project Description
+Static restaurant microsite rebuilt with Astro for cleaner structure, shared layouts, and a GitHub Pages-friendly output.
 
-This project is a mini-project aimed at creating a responsive website for a restaurant using Tailwind CSS. The website consists of several pages including a homepage, a menu page, and a reservation page.
+## Live Site
 
-## Installation
+- Production: `https://elli2022.github.io/HighStDeliAndMarketImitation/`
 
-Follow these steps to install and run the project locally:
+## Stack
 
-1. Clone this repository:
-    ```sh
-    git clone https://github.com/yourusername/HighStDeliAndMarketImitation.git
-    ```
+- Astro
+- TypeScript
+- Custom CSS
+- GitHub Pages publishing from `docs/`
 
-2. Navigate to the project folder:
-    ```sh
-    cd HighStDeliAndMarketImitation
-    ```
+## Local Development
 
-3. Install the necessary npm packages:
-    ```sh
-    npm install
-    ```
+1. Install dependencies:
+   ```sh
+   npm install
+   ```
+2. Start the local dev server:
+   ```sh
+   npm run dev
+   ```
+3. Create the production build:
+   ```sh
+   npm run build
+   ```
 
-4. Build the CSS files with Tailwind:
-    ```sh
-    npm run build
-    ```
+## Version History
 
-5. Start a local server to view the website:
-    ```sh
-    npx http-server ./src
-    ```
-
-6. Open your browser and go to `http://127.0.0.1:8080` to view the website.
-
-
+- The pre-modernization version is preserved in the branch `version/pre-astro-modernization-2026-05-31`.
+- The current `main` branch contains the modern Astro rebuild.
 
 ## Deployment
 
-This project is deployed with GitHub Pages from the `docs` directory on `main`.
-
-- **Production URL:** `https://elli2022.github.io/HighStDeliAndMarketImitation/`
-- **Build command:** `npm run build`
-- **Published directory:** `docs`
-
-## Technologies Used
-
-- HTML
-- Tailwind CSS
-
-## Tailwind CSS Configuration
-
-The project uses Tailwind CSS to quickly and easily create responsive designs. The Tailwind configuration can be found in `tailwind.config.js`.
-
-## Contact
-
-For questions or support, contact Eleonora Nocentini Skoldebrink via [email](mailto:eleonora.nocentini@gmail.com).
+GitHub Pages is configured to publish from the `docs` directory on `main`. Running `npm run build` refreshes that output.
