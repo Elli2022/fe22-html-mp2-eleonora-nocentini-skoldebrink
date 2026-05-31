@@ -39,12 +39,11 @@ Follow these steps to install and run the project locally:
 
 ## Deployment
 
-This project is configured for easy deployment on Netlify. The following settings are used:
+This project is deployed with GitHub Pages from a GitHub Actions workflow.
 
-- **Branch to deploy:** `main`
-- **Base directory:** (Leave empty)
+- **Production URL:** `https://elli2022.github.io/HighStDeliAndMarketImitation/`
 - **Build command:** `npm run build`
-- **Publish directory:** `src`
+- **Published directory:** `src`
 
 ## Technologies Used
 
