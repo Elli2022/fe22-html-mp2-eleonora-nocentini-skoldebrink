@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../dist/output.css" rel="stylesheet">
+    <title>Meny</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .font-courier {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .text-green-900 {
+            color: #334834;
+        }
+
+        .img-container {
+            height: 20rem;
+            overflow: hidden;
+        }
+
+        .img-container img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+<div class="container mx-auto p-4">
+    <!-- Header -->
+    <header class="flex justify-between items-center bg-green-900 p-4 rounded shadow-lg mb-8">
+        <a class="site-logo__btn" href="../index.html">
+            <img class="site-logo__expanded w-16 h-16" src="../images/highStMarketDeliLogo.png" alt="High Street Deli Home">
+        </a>
+        <nav class="flex space-x-8">
+            <ul class="flex space-x-4 text-lg">
+                <li><a class="text-white hover:text-yellow-500 transition duration-300 font-courier" href="../index.html">STARTSIDAN</a></li>
+                <li><a class="text-white hover:text-yellow-500 transition duration-300 font-courier" href="bokabord.html">BOKA HÄR!</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="mb-8">
+        <section class="hero bg-cover bg-center mb-8 rounded shadow-lg"
+        style="background-image: url('../images/highStreetMarjetAndDeli.jpg'); height: 500px;">
+        <div class="flex items-center justify-center h-full rounded">
+            <h1 class="text-white text-6xl font-bold font-courier">Vår Meny</h1>
+        </div>
+    </section>
+
+        <section class="main2 bg-white p-6 rounded-lg shadow-lg font-courier">
+            <h2 class="text-center text-green-900 text-5xl font-bold mb-6">MENY</h2>
+            <h3 class="text-center text-gray-700 text-2xl mb-6">Vad får vi lov att fresta med?</h3>
+            <div class="menu-container font-courier">
+                <p class="text-green-900 text-lg leading-relaxed font-bold font-courier">
+                    <h4 class="text-2xl font-bold mb-2">CALIFORNIA TURKEY (OR BEEF)</h4>
+                    Roast turkey or beef, green chile, melted pepper jack, the works, avocado, toasted sliced sourdough.
+                    <span class="block mt-2 mb-4">$12.50</span>
+
+                    <h4 class="text-2xl font-bold mb-2">DUTCH PUNCH</h4>
+                    Smoked turkey, extra bacon, jalapeño havarti, red onion, tomato, romaine, avocado, chipotle mayo, Dutch crunch.
+                    <span class="block mt-2 mb-4">$12.50</span>
+
+                    <h4 class="text-2xl font-bold mb-2">HOT PASTRAMI</h4>
+                    Lean roast pastrami, melted Swiss, the works, pepperoncini, toasted sliced sourdough.
+                    <span class="block mt-2 mb-4">$12.50</span>
+
+                    <h4 class="text-2xl font-bold mb-2">NEW YORK</h4>
+                    Pastrami, melted Swiss, extra meat, extra cheese, mayo, dijon, yellow mustard, extra pickle, toasted sliced rye.
+                    <span class="block mt-2 mb-4">$13.75</span>
+
+                    <h4 class="text-2xl font-bold mb-2">SPRING CLUB</h4>
+                    Roast turkey, bacon, melted cheddar, ranch, shrettuce, cucumber, tomato, mayo, French roll.
+                    <span class="block mt-2 mb-4">$12.50</span>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Aside Content -->
+    <aside class="my-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="aside1 img-container">
+            <img src="../images/cheeseBurger.jpeg" class="img2 rounded-lg shadow-lg" alt="Bild på Cheeseburgare">
+        </div>
+        <div class="aside2 img-container">
+            <img src="https://images.squarespace-cdn.com/content/v1/54dabf38e4b06c67da923d72/1604008240758-G3WEGDKR7R0JBQOV9A4E/BrowserPreview_tmp-2.jpg?format=1500w" class="img3 rounded-lg shadow-lg" alt="">
+        </div>
+    </aside>
+
+    <!-- Footer -->
+    <footer class="bg-green-900 p-4 rounded text-center text-white font-courier shadow-lg mt-8">
+        <div class="instagram-grid__item">
+            <p>
+                HighSt <br>
+                Datumgatan 21C <br>
+                213 71 Malmö <br>
+                +46 40 44 20 25 <br>
+            </p>
+        </div>
+    </footer>
+</div>
+</body>
+
+</html>

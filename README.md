@@ -39,11 +39,11 @@ Follow these steps to install and run the project locally:
 
 ## Deployment
 
-This project is deployed with GitHub Pages from a GitHub Actions workflow.
+This project is deployed with GitHub Pages from the `docs` directory on `main`.
 
 - **Production URL:** `https://elli2022.github.io/HighStDeliAndMarketImitation/`
 - **Build command:** `npm run build`
-- **Published directory:** `src`
+- **Published directory:** `docs`
 
 ## Technologies Used
 
