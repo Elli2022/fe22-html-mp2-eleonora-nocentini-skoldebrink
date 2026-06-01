@@ -1,14 +1,15 @@
-# HTML CSS Restaurant Mini Project
+# FE22 HTML MP2
 
-[![Deploy](https://img.shields.io/badge/Deploy-GitHub%20Pages-0969da?style=for-the-badge)](https://elli2022.github.io/html-css-restaurant-mini-project/)
+[![Deploy](https://img.shields.io/badge/Deploy-GitHub%20Pages-0969da?style=for-the-badge)](https://elli2022.github.io/fe22-html-mp2-eleonora-nocentini-skoldebrink/)
 [![Stack](https://img.shields.io/badge/Stack-Astro-0969da?style=for-the-badge)](https://astro.build/)
-[![Course](https://img.shields.io/badge/Course-HTML%20%26%20CSS-0969da?style=for-the-badge)](https://github.com/Elli2022/html-css-restaurant-mini-project)
+[![Course](https://img.shields.io/badge/Course-FE22%20HTML-0969da?style=for-the-badge)](https://github.com/Elli2022/fe22-html-mp2-eleonora-nocentini-skoldebrink)
+[![Project](https://img.shields.io/badge/Project-MP2-0969da?style=for-the-badge)](https://github.com/Elli2022/fe22-html-mp2-eleonora-nocentini-skoldebrink)
 
-Responsive restaurant website originally created for an HTML and CSS mini project, then rebuilt with Astro for cleaner structure, shared layouts, and a GitHub Pages-friendly output.
+Responsive restaurant website originally created for FE22 HTML Mini Project 2, then rebuilt with Astro for cleaner structure, shared layouts, and a GitHub Pages-friendly output.
 
 ## Live Site
 
-- Production: `https://elli2022.github.io/html-css-restaurant-mini-project/`
+- Production: `https://elli2022.github.io/fe22-html-mp2-eleonora-nocentini-skoldebrink/`
 
 ## Stack
 
