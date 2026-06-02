@@ -1,4 +1,4 @@
-# High Street Deli Website
+# High Street Deli — Restaurant Site
 
 ![Astro](https://img.shields.io/badge/Astro-6-BC52EE)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6)
@@ -7,7 +7,7 @@
 
 Responsive marketing website for **High St Deli** — a neighborhood deli and bar in Malmö. Built with semantic HTML, custom CSS, and Astro for static generation and shared layouts.
 
-**Live demo:** [high-street-deli-website.netlify.app](https://high-street-deli-website.netlify.app)
+**Live demo:** [high-street-deli-restaurant-site.netlify.app](https://high-street-deli-restaurant-site.netlify.app)
 
 ## Highlights
 
@@ -35,8 +35,8 @@ Responsive marketing website for **High St Deli** — a neighborhood deli and ba
 ## Local development
 
 ```bash
-git clone https://github.com/Elli2022/high-street-deli-website.git
-cd high-street-deli-website
+git clone https://github.com/Elli2022/high-street-deli-restaurant-site.git
+cd high-street-deli-restaurant-site
 npm install
 npm run dev
 ```
