@@ -1,18 +1,20 @@
 {
-  "name": "fe22-html-mp2-eleonora-nocentini-skoldebrink",
-  "version": "3.0.0",
+  "name": "high-street-deli-website",
+  "version": "3.1.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node ./scripts/postbuild.mjs",
+    "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "screenshots": "node ./scripts/capture-screenshots.mjs"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@types/node": "^25.9.1",
     "astro": "^6.4.2",
+    "playwright": "^1.52.0",
     "typescript": "^6.0.3"
   }
 }
